@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+vendor/
+package.json
+package-lock.json
+composer.json
+composer.lock
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test files
+test-*.js
+test-*.php
+tests/
+
+# Build
+*.log
+*.cache
