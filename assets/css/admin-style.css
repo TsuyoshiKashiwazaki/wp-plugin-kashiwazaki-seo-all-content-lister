@@ -54,6 +54,79 @@
     min-width: 120px;
 }
 
+/* Link Scan */
+.kashiwazaki-seo-all-content-lister-link-scan {
+    background: #fff;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccd0d4;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.kashiwazaki-seo-all-content-lister-link-scan .scan-label {
+    font-weight: 600;
+}
+
+#link-scan-status .scan-running {
+    color: #0073aa;
+    font-weight: 500;
+}
+
+#link-scan-status .scan-running::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #0073aa;
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-right: 6px;
+    vertical-align: middle;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#start-link-scan-btn.updating-message {
+    opacity: 0.7;
+    cursor: wait;
+}
+
+#link-scan-status .scan-completed {
+    color: #00a32a;
+}
+
+#link-scan-status .scan-none {
+    color: #999;
+}
+
+#link-scan-status .scan-error {
+    color: #d63638;
+}
+
+#link-scan-progress {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#link-scan-progress .progress-text {
+    font-size: 12px;
+    color: #666;
+    min-width: 80px;
+}
+
+#link-scan-progress-bar {
+    width: 150px;
+    height: 20px;
+}
+
 /* Column Toggles */
 .kashiwazaki-seo-all-content-lister-column-toggles {
     background: #f6f7f7;
@@ -172,6 +245,94 @@
     border-radius: 3px;
     font-size: 11px;
     word-break: break-all;
+}
+
+.kashiwazaki-seo-all-content-lister-table .column-incoming_links {
+    width: 150px;
+}
+
+.column-incoming_links .no-data {
+    background: #e5e5e5;
+    color: #666;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+}
+
+.column-incoming_links .not-scanned {
+    background: #f0b849;
+    color: #333;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.incoming-links-summary {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.incoming-link-first {
+    font-size: 12px;
+    color: #0073aa;
+    text-decoration: none;
+}
+
+.incoming-link-first:hover {
+    text-decoration: underline;
+}
+
+.incoming-links-more {
+    font-size: 11px;
+    color: #666;
+}
+
+.incoming-links-toggle {
+    font-size: 11px;
+    color: #0073aa;
+    cursor: pointer;
+    padding: 0;
+    border: none;
+    background: none;
+    text-decoration: underline;
+}
+
+.incoming-links-toggle:hover {
+    color: #005a87;
+}
+
+.incoming-links-detail {
+    margin-top: 8px;
+    padding: 8px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.incoming-link-item {
+    display: block;
+    font-size: 11px;
+    color: #0073aa;
+    text-decoration: none;
+    padding: 3px 4px;
+    border-radius: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.incoming-link-item:hover {
+    background: #e0e9f0;
+    text-decoration: underline;
+}
+
+.incoming-link-item + .incoming-link-item {
+    margin-top: 2px;
 }
 
 /* Hidden columns */
@@ -349,7 +510,8 @@
     }
 
     .kashiwazaki-seo-all-content-lister-table .column-post_name,
-    .kashiwazaki-seo-all-content-lister-table .column-categories {
+    .kashiwazaki-seo-all-content-lister-table .column-categories,
+    .kashiwazaki-seo-all-content-lister-table .column-incoming_links {
         display: none;
     }
 }
