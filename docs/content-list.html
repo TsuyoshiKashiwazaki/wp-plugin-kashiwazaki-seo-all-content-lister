@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コンテンツ一覧 - All Content Lister マニュアル</title>
+    <link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+    <button class="hamburger-btn" aria-label="メニューを開く">&#9776;</button>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2 style="color:#fff;">All Content Lister</h2>
+            <span class="version">v1.0.1</span>
+            <img src="images/main-visual.png" alt="" style="width:100%;border-radius:4px;margin-top:8px;">
+        </div>
+        <ul>
+            <li><a href="index.html">概要</a></li>
+            <li><a href="setup.html">インストール・初期設定</a></li>
+            <li><a href="content-list.html">コンテンツ一覧</a></li>
+            <li><a href="link-map.html">被リンク調査・リンクマップ</a></li>
+            <li><a href="troubleshooting.html">トラブルシューティング</a></li>
+        </ul>
+    </nav>
+    <main class="content">
+        <h1>コンテンツ一覧</h1>
+
+        <p class="lead">全ての投稿・固定ページ・カスタム投稿タイプを一覧表示し、ソート・フィルター・カラム表示切替・CSV出力の機能を提供します。</p>
+
+        <h2>使い方</h2>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            <div class="step-body">
+                <p>管理画面左メニュー「Kashiwazaki SEO All Content Lister」→「コンテンツ一覧」をクリック</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <div class="step-body">
+                <p>フィルターで「投稿タイプ」と「ステータス」を選択して絞り込み</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <div class="step-body">
+                <p>テーブルのヘッダーをクリックしてソート（昇順/降順の切り替え）</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">4</span>
+            <div class="step-body">
+                <p>「表示カラム設定」で必要な列の表示/非表示を切り替え</p>
+            </div>
+        </div>
+
+        <figure class="screenshot">
+            <img src="images/screenshots/01-content-list.png" alt="コンテンツ一覧画面" class="lightbox-trigger">
+            <figcaption>図: コンテンツ一覧画面（フィルター・ソート・カラム設定）</figcaption>
+        </figure>
+
+        <h2>表示カラム一覧</h2>
+
+        <table class="widefat">
+            <thead>
+                <tr>
+                    <th style="width:25%;">カラム名</th>
+                    <th>説明</th>
+                    <th>デフォルト</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>ID</td>
+                    <td>投稿ID</td>
+                    <td>表示</td>
+                </tr>
+                <tr>
+                    <td>タイトル</td>
+                    <td>記事タイトル（編集・表示リンク付き）</td>
+                    <td>表示</td>
+                </tr>
+                <tr>
+                    <td>URL</td>
+                    <td>パーマリンク</td>
+                    <td>表示</td>
+                </tr>
+                <tr>
+                    <td>投稿タイプ</td>
+                    <td>post, page, カスタム投稿タイプ名</td>
+                    <td>表示</td>
+                </tr>
+                <tr>
+                    <td>ステータス</td>
+                    <td>publish, draft, pending, future, private, trash</td>
+                    <td>表示</td>
+                </tr>
+                <tr>
+                    <td>カテゴリー</td>
+                    <td>所属カテゴリー</td>
+                    <td>表示</td>
+                </tr>
+                <tr>
+                    <td>キーワード</td>
+                    <td>SEOプラグインのフォーカスキーワード</td>
+                    <td>表示</td>
+                </tr>
+                <tr>
+                    <td>ディスクリプション</td>
+                    <td>SEOプラグインのメタディスクリプション</td>
+                    <td>表示</td>
+                </tr>
+                <tr>
+                    <td>投稿日</td>
+                    <td>公開日（Y-m-d H:i形式）</td>
+                    <td>表示</td>
+                </tr>
+                <tr>
+                    <td>更新日</td>
+                    <td>最終更新日</td>
+                    <td>表示</td>
+                </tr>
+                <tr>
+                    <td>スラッグ</td>
+                    <td>URLスラッグ</td>
+                    <td>非表示</td>
+                </tr>
+                <tr>
+                    <td>被リンク数</td>
+                    <td>サイト内からの内部リンク数</td>
+                    <td>表示</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout callout-tip">
+            <div class="callout-title">ヒント</div>
+            <p>カラムの表示/非表示設定はブラウザのlocalStorageに保存されるため、ページをリロードしても設定が維持されます。</p>
+        </div>
+
+        <h2>CSV出力</h2>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            <div class="step-body">
+                <p>必要に応じてフィルターで絞り込み</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <div class="step-body">
+                <p>エンコーディングを「UTF-8」または「Shift-JIS」から選択</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <div class="step-body">
+                <p>「CSVダウンロード」ボタンをクリック</p>
+            </div>
+        </div>
+
+        <div class="callout callout-note">
+            <div class="callout-title">備考</div>
+            <p>ファイル名は <code>content-list-YYYY-MM-DD-HHmmss.csv</code> 形式で自動生成されます。現在のフィルター条件が反映された内容がエクスポートされます。</p>
+        </div>
+
+        <table class="widefat">
+            <thead>
+                <tr>
+                    <th style="width:35%;">エンコーディング</th>
+                    <th>用途</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>UTF-8（BOM付き）</td>
+                    <td>Google スプレッドシート、最新のExcel</td>
+                </tr>
+                <tr>
+                    <td>Shift-JIS</td>
+                    <td>古いバージョンのExcel（日本語環境）</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>ステータスバッジ</h2>
+
+        <table class="widefat">
+            <thead>
+                <tr>
+                    <th style="width:25%;">ステータス</th>
+                    <th>色</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>publish</td>
+                    <td>緑</td>
+                    <td>公開済み</td>
+                </tr>
+                <tr>
+                    <td>pending</td>
+                    <td>橙</td>
+                    <td>レビュー待ち</td>
+                </tr>
+                <tr>
+                    <td>draft</td>
+                    <td>グレー</td>
+                    <td>下書き</td>
+                </tr>
+                <tr>
+                    <td>future</td>
+                    <td>青</td>
+                    <td>予約投稿</td>
+                </tr>
+                <tr>
+                    <td>private</td>
+                    <td>紫</td>
+                    <td>非公開</td>
+                </tr>
+                <tr>
+                    <td>trash</td>
+                    <td>赤</td>
+                    <td>ゴミ箱</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <figure class="infographic">
+            <img src="images/infographics/content-list-flow.png" alt="コンテンツ一覧の操作フロー" class="lightbox-trigger">
+            <figcaption>図: コンテンツ一覧の操作フロー</figcaption>
+        </figure>
+
+        <nav class="page-nav">
+            <a href="setup.html" class="prev">&laquo; インストール・初期設定</a>
+            <a href="link-map.html" class="next">被リンク調査・リンクマップ &raquo;</a>
+        </nav>
+
+        <footer class="manual-footer">
+            <p>作者: <a href="https://www.tsuyoshikashiwazaki.jp/profile/" target="_blank" rel="noopener">柏崎剛（Tsuyoshi Kashiwazaki）</a></p>
+            <p>プラグイン: Kashiwazaki SEO All Content Lister v1.0.1</p>
+        </footer>
+    </main>
+
+    <div class="lightbox"></div>
+
+    <script src="js/manual.js?v=1"></script>
+</body>
+</html>

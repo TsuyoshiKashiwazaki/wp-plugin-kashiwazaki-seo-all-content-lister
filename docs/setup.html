@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>インストール・初期設定 - All Content Lister マニュアル</title>
+    <link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+    <button class="hamburger-btn" aria-label="メニューを開く">&#9776;</button>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2 style="color:#fff;">All Content Lister</h2>
+            <span class="version">v1.0.1</span>
+            <img src="images/main-visual.png" alt="" style="width:100%;border-radius:4px;margin-top:8px;">
+        </div>
+        <ul>
+            <li><a href="index.html">概要</a></li>
+            <li><a href="setup.html">インストール・初期設定</a></li>
+            <li><a href="content-list.html">コンテンツ一覧</a></li>
+            <li><a href="link-map.html">被リンク調査・リンクマップ</a></li>
+            <li><a href="troubleshooting.html">トラブルシューティング</a></li>
+        </ul>
+    </nav>
+    <main class="content">
+        <h1>インストール・初期設定</h1>
+
+        <p class="lead">プラグインのインストールから初期設定まで、ステップバイステップで解説します。</p>
+
+        <h2>インストール手順</h2>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            <div class="step-body">
+                <p>プラグインファイルを <code>/wp-content/plugins/kashiwazaki-seo-all-content-lister/</code> にアップロード</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <div class="step-body">
+                <p>WordPress管理画面「プラグイン」から有効化</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <div class="step-body">
+                <p>左メニューに「Kashiwazaki SEO All Content Lister」が追加される（dashicons-list-viewアイコン）</p>
+            </div>
+        </div>
+
+        <div class="callout callout-tip">
+            <p>有効化時に被リンク調査用のキャッシュテーブル（<code>wp_kashiwazaki_incoming_links</code>）が自動作成されます。設定ページはなく、すぐに使用を開始できます。</p>
+        </div>
+
+        <h2>管理画面の構成</h2>
+
+        <p>管理画面は「コンテンツ一覧」と「リンクマップ」の2つのサブメニューで構成されています。</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:35%;">メニュー</th>
+                    <th>スラッグ</th>
+                    <th>説明</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>コンテンツ一覧</td>
+                    <td>kashiwazaki-seo-all-content-lister</td>
+                    <td>全コンテンツの一覧・フィルター・CSV出力・被リンク調査</td>
+                </tr>
+                <tr>
+                    <td>リンクマップ</td>
+                    <td>kashiwazaki-seo-link-map</td>
+                    <td>D3.jsによる内部リンク構造の可視化</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <figure class="screenshot">
+            <img src="images/screenshots/01-content-list.png" alt="コンテンツ一覧画面" class="lightbox-trigger">
+            <figcaption>図: コンテンツ一覧画面</figcaption>
+        </figure>
+
+        <h2>SEOプラグイン連携</h2>
+
+        <p>以下のSEOプラグインからメタディスクリプションとキーワードを自動取得して一覧に表示します。</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:35%;">SEOプラグイン</th>
+                    <th>ディスクリプション</th>
+                    <th>キーワード</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Yoast SEO</td>
+                    <td><code>_yoast_wpseo_metadesc</code></td>
+                    <td><code>_yoast_wpseo_focuskw</code></td>
+                </tr>
+                <tr>
+                    <td>All in One SEO</td>
+                    <td><code>_aioseo_description</code></td>
+                    <td><code>_aioseo_keywords</code></td>
+                </tr>
+                <tr>
+                    <td>Rank Math</td>
+                    <td><code>rank_math_description</code></td>
+                    <td><code>rank_math_focus_keyword</code></td>
+                </tr>
+                <tr>
+                    <td>SEOPress</td>
+                    <td><code>_seopress_titles_desc</code></td>
+                    <td><code>_seopress_analysis_target_kw</code></td>
+                </tr>
+                <tr>
+                    <td>Kashiwazaki SEO</td>
+                    <td><code>_kashiwazaki_seo_description</code></td>
+                    <td><code>_kashiwazaki_seo_keywords</code></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="callout callout-note">
+            <p>SEOプラグインがインストールされていない場合、ディスクリプションとキーワードの列は空欄になります。</p>
+        </div>
+
+        <nav class="page-nav">
+            <a href="index.html" class="prev">&laquo; 概要</a>
+            <a href="content-list.html" class="next">コンテンツ一覧 &raquo;</a>
+        </nav>
+
+        <footer class="manual-footer">
+            <p>作者: <a href="https://www.tsuyoshikashiwazaki.jp/profile/" target="_blank" rel="noopener">柏崎剛（Tsuyoshi Kashiwazaki）</a></p>
+            <p>プラグイン: Kashiwazaki SEO All Content Lister v1.0.1</p>
+        </footer>
+    </main>
+
+    <div class="lightbox"></div>
+
+    <script src="js/manual.js?v=1"></script>
+</body>
+</html>

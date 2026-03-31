@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>トラブルシューティング - All Content Lister マニュアル</title>
+    <link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+    <button class="hamburger-btn" aria-label="メニューを開く">&#9776;</button>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2 style="color:#fff;">All Content Lister</h2>
+            <span class="version">v1.0.1</span>
+            <img src="images/main-visual.png" alt="" style="width:100%;border-radius:4px;margin-top:8px;">
+        </div>
+        <ul>
+            <li><a href="index.html">概要</a></li>
+            <li><a href="setup.html">インストール・初期設定</a></li>
+            <li><a href="content-list.html">コンテンツ一覧</a></li>
+            <li><a href="link-map.html">被リンク調査・リンクマップ</a></li>
+            <li><a href="troubleshooting.html">トラブルシューティング</a></li>
+        </ul>
+    </nav>
+    <main class="content">
+        <h1>トラブルシューティング</h1>
+
+        <p class="lead">よくある問題とその解決方法をまとめています。</p>
+
+        <h2>よくある問題と解決策</h2>
+
+        <h3>被リンクスキャンが途中で止まる</h3>
+
+        <p>原因: AJAXリクエストのタイムアウトまたはサーバーのメモリ不足が考えられます。</p>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            <div class="step-body">
+                <p>ブラウザのコンソール（F12キー）でエラーメッセージを確認する</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <div class="step-body">
+                <p>WordPressの <code>wp-config.php</code> でメモリ上限を確認する（<code>WP_MEMORY_LIMIT</code>）</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <div class="step-body">
+                <p>サーバーのPHP <code>max_execution_time</code> 設定を確認する（推奨: 300秒以上）</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">4</span>
+            <div class="step-body">
+                <p>ページをリロードして再度「被リンクを調査する」ボタンをクリックする（中断した箇所から再開されます）</p>
+            </div>
+        </div>
+
+        <div class="callout callout-tip">
+            <p>バッチ処理は10記事ずつ実行されるため、1回のリクエストがタイムアウトしても全体が失敗するわけではありません。</p>
+        </div>
+
+        <h3>リンクマップが表示されない（空白）</h3>
+
+        <p>原因: D3.jsライブラリの読み込み失敗、または被リンクスキャンが未実行です。</p>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            <div class="step-body">
+                <p>先に「コンテンツ一覧」ページで被リンクスキャンを実行する</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <div class="step-body">
+                <p>ブラウザのコンソールでD3.jsの読み込みエラーがないか確認する</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <div class="step-body">
+                <p>CDN（<code>https://d3js.org/d3.v7.min.js</code>）へのアクセスが遮断されていないか確認する</p>
+            </div>
+        </div>
+
+        <div class="callout callout-note">
+            <p>D3.jsは外部CDNから読み込まれます。社内ネットワーク等でCDNへのアクセスが制限されている場合、リンクマップは表示できません。</p>
+        </div>
+
+        <h3>カラム表示設定がリセットされる</h3>
+
+        <p>原因: ブラウザのlocalStorageがクリアされた可能性があります。</p>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            <div class="step-body">
+                <p>ブラウザのプライベートモード（シークレットモード）を使用していないか確認する</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <div class="step-body">
+                <p>ブラウザのキャッシュや履歴を削除した場合、localStorage もクリアされます</p>
+            </div>
+        </div>
+
+        <div class="callout callout-tip">
+            <p>カラム設定はブラウザのlocalStorageに保存されるため、別のブラウザや別のPCでは設定が共有されません。</p>
+        </div>
+
+        <h3>CSV出力で文字化けする</h3>
+
+        <p>原因: エンコーディングの選択がアプリケーションと合っていません。</p>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            <div class="step-body">
+                <p>Excelで開く場合は「Shift-JIS」を選択してダウンロードする</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <div class="step-body">
+                <p>Google スプレッドシートや最新のExcelで開く場合は「UTF-8」を選択する</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <div class="step-body">
+                <p>それでも文字化けする場合は、テキストエディタで開いてエンコーディングを確認する</p>
+            </div>
+        </div>
+
+        <div class="callout callout-note">
+            <p>UTF-8版にはBOM（Byte Order Mark）が付与されており、最新のExcel（2016以降）で正しく認識されます。</p>
+        </div>
+
+        <h3>被リンク数が0と表示される</h3>
+
+        <p>原因: 被リンクスキャンが未実行、または他の記事からリンクされていない可能性があります。</p>
+
+        <div class="step">
+            <span class="step-number">1</span>
+            <div class="step-body">
+                <p>「コンテンツ一覧」ページで「被リンクを調査する」ボタンをクリックしてスキャンを実行する</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">2</span>
+            <div class="step-body">
+                <p>スキャン完了後、「最終調査」の日時が更新されていることを確認する</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <span class="step-number">3</span>
+            <div class="step-body">
+                <p>実際に他の記事からリンクされているか、記事の編集画面で確認する</p>
+            </div>
+        </div>
+
+        <h2>動作要件</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th style="width:35%;">項目</th>
+                    <th>要件</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>WordPress</td>
+                    <td>5.0 以上</td>
+                </tr>
+                <tr>
+                    <td>PHP</td>
+                    <td>7.2 以上</td>
+                </tr>
+                <tr>
+                    <td>ブラウザ</td>
+                    <td>Chrome, Firefox, Safari, Edge（最新版）</td>
+                </tr>
+                <tr>
+                    <td>外部ライブラリ</td>
+                    <td>D3.js v7（CDNから自動読み込み）</td>
+                </tr>
+                <tr>
+                    <td>権限</td>
+                    <td>edit_posts 以上</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>技術仕様</h2>
+
+        <ul>
+            <li>データ保存: カスタムテーブル <code>wp_kashiwazaki_incoming_links</code>（被リンクキャッシュ）</li>
+            <li>設定保存: wp_options（<code>kashiwazaki_link_scan_*</code> キー、スキャン進捗管理用）</li>
+            <li>カラム設定: ブラウザ localStorage（ユーザーごと）</li>
+            <li>バッチ処理: AJAXベース、10記事/リクエスト、クライアントサイドポーリング（100ms間隔）</li>
+            <li>グラフ描画: D3.js v7 フォースシミュレーション（CDN: <code>https://d3js.org/d3.v7.min.js</code>）</li>
+            <li>SEO連携: Yoast SEO / All in One SEO / Rank Math / SEOPress / Kashiwazaki SEO のメタデータを自動取得</li>
+            <li>セキュリティ: nonce検証、capability チェック（edit_posts）、<code>$wpdb-&gt;prepare()</code> によるSQLインジェクション対策</li>
+            <li>CSV出力: UTF-8（BOM付き）/ Shift-JIS 対応、<code>mb_convert_encoding</code> 使用</li>
+            <li>アーキテクチャ: シングルトンパターン、単一PHPファイル構成</li>
+        </ul>
+
+        <figure class="infographic">
+            <img src="images/infographics/architecture.png" alt="プラグインのアーキテクチャ" class="lightbox-trigger">
+            <figcaption>図: プラグインのアーキテクチャ</figcaption>
+        </figure>
+
+        <nav class="page-nav">
+            <a href="link-map.html" class="prev">&laquo; 被リンク調査・リンクマップ</a>
+            <span></span>
+        </nav>
+
+        <footer class="manual-footer">
+            <p>作者: <a href="https://www.tsuyoshikashiwazaki.jp/profile/" target="_blank" rel="noopener">柏崎剛（Tsuyoshi Kashiwazaki）</a></p>
+            <p>プラグイン: Kashiwazaki SEO All Content Lister v1.0.1</p>
+        </footer>
+    </main>
+
+    <div class="lightbox"></div>
+
+    <script src="js/manual.js?v=1"></script>
+</body>
+</html>

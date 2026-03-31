@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>概要 - All Content Lister マニュアル</title>
+    <link rel="stylesheet" href="css/style.css?v=1">
+</head>
+<body>
+    <button class="hamburger-btn" aria-label="メニューを開く">&#9776;</button>
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <h2 style="color:#fff;">All Content Lister</h2>
+            <span class="version">v1.0.1</span>
+            <img src="images/main-visual.png" alt="" style="width:100%;border-radius:4px;margin-top:8px;">
+        </div>
+        <ul>
+            <li><a href="index.html">概要</a></li>
+            <li><a href="setup.html">インストール・初期設定</a></li>
+            <li><a href="content-list.html">コンテンツ一覧</a></li>
+            <li><a href="link-map.html">被リンク調査・リンクマップ</a></li>
+            <li><a href="troubleshooting.html">トラブルシューティング</a></li>
+        </ul>
+    </nav>
+    <main class="content">
+        <h1>Kashiwazaki SEO All Content Lister マニュアル</h1>
+
+        <img src="images/main-visual.png" alt="All Content Lister メインビジュアル" style="width:100%; border-radius:8px; margin-bottom:24px;">
+
+        <p class="lead">WordPressサイト内の全コンテンツ（投稿・固定ページ・カスタム投稿タイプ）を一覧表示し、ソート・フィルター・CSV出力・被リンク調査・リンクマップ可視化を提供する管理ツールです。SEOプラグインのメタデータ（Yoast SEO、Rank Math等）との連携にも対応しています。</p>
+
+        <p>本プラグインはWordPress管理画面内で動作する管理者向けのコンテンツ監査ツールです。フロントエンド（公開ページ）には一切影響を与えず、構造化データの出力やmetaタグの生成は行いません。サイト内のコンテンツとリンク構造を俯瞰的に把握し、SEO改善のための分析作業を効率化することを目的としています。</p>
+
+        <section>
+            <h2>主要機能</h2>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <h3>コンテンツ一覧</h3>
+                    <p>全投稿タイプを横断的に一覧表示。12カラム対応、ソート・フィルター・カラム表示切替・CSV出力機能を搭載。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>被リンク調査</h3>
+                    <p>サイト内の全記事をバッチスキャンし、各ページへの内部リンク数を自動集計。結果はカスタムテーブルにキャッシュ。</p>
+                </div>
+                <div class="feature-card">
+                    <h3>リンクマップ</h3>
+                    <p>D3.jsによるフォースグラフで内部リンク構造を視覚化。ノード選択・ズーム・ドラッグ操作に対応。</p>
+                </div>
+            </div>
+        </section>
+
+        <figure class="infographic">
+            <img src="images/infographics/overview-flow.png" alt="プラグインの全体ワークフロー" class="lightbox-trigger">
+            <figcaption>図: プラグインの全体ワークフロー</figcaption>
+        </figure>
+
+        <section>
+            <h2>目次</h2>
+            <ul>
+                <li><a href="index.html">概要</a> - プラグインの概要と主要機能の紹介</li>
+                <li><a href="setup.html">インストール・初期設定</a> - インストール手順と初期設定の方法</li>
+                <li><a href="content-list.html">コンテンツ一覧</a> - コンテンツ一覧の使い方とCSV出力</li>
+                <li><a href="link-map.html">被リンク調査・リンクマップ</a> - 被リンクスキャンとD3.jsリンクマップ</li>
+                <li><a href="troubleshooting.html">トラブルシューティング</a> - よくある問題と解決方法</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>SEO / GEO における強み</h2>
+
+            <p>本プラグインはフロントエンドへの出力や構造化データの生成は行いませんが、管理画面上でのコンテンツ監査を通じて、SEOおよびGEO（Generative Engine Optimization）の改善に役立つ情報を提供します。</p>
+
+            <h3>コンテンツ監査によるSEO改善</h3>
+            <p>コンテンツ一覧では、SEOプラグイン（Yoast SEO、All in One SEO、Rank Math、SEOPress、Kashiwazaki SEO）から取得したメタディスクリプションとフォーカスキーワードを一括で確認できます。これにより、メタディスクリプションやフォーカスキーワードが未設定のページを素早く特定し、対策の優先順位を判断する際に活用できます。</p>
+
+            <h3>内部リンク構造の可視化</h3>
+            <p>リンクマップ機能は、D3.jsのフォースグラフによってサイト内の内部リンク構造を視覚的に表示します。これにより、他のページからリンクされていない孤立ページ（オーファンページ）の発見や、内部リンクが集中しているページの把握が可能になります。内部リンク構造の最適化は、検索エンジンのクロール効率の向上に寄与すると考えられます。</p>
+
+            <h3>データ駆動型のSEO監査</h3>
+            <p>CSV出力機能により、コンテンツ一覧のデータを外部ツール（スプレッドシートやBIツール等）でさらに詳細に分析することが可能です。投稿タイプ・ステータス・カテゴリー・被リンク数などの情報を組み合わせることで、データに基づいたSEO施策の立案を支援します。</p>
+
+            <h3>GEOへの応用可能性</h3>
+            <p>GEO（Generative Engine Optimization）の観点では、AIクローラーがサイト構造を効率的に理解できるよう、内部リンク構造を整理することが重要とされています。本プラグインのリンクマップ機能で内部リンク構造を把握し、孤立ページの解消やリンク階層の最適化を行うことで、サイトアーキテクチャの改善に役立てることができます。</p>
+        </section>
+
+        <section>
+            <h2>動作要件</h2>
+            <ul>
+                <li>WordPress 5.0 以上</li>
+                <li>PHP 7.2 以上</li>
+            </ul>
+        </section>
+
+        <nav class="page-nav">
+            <span></span>
+            <a href="setup.html" class="next">インストール・初期設定 &raquo;</a>
+        </nav>
+
+        <footer class="manual-footer">
+            <p>作者: <a href="https://www.tsuyoshikashiwazaki.jp/profile/" target="_blank" rel="noopener">柏崎剛（Tsuyoshi Kashiwazaki）</a></p>
+            <p>プラグイン: Kashiwazaki SEO All Content Lister v1.0.1</p>
+        </footer>
+    </main>
+
+    <div class="lightbox"></div>
+
+    <script src="js/manual.js?v=1"></script>
+</body>
+</html>
